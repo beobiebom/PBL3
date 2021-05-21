@@ -12,6 +12,8 @@ namespace Pharmacy
 {
     public partial class Admin : Form
     {
+        string s = "";
+
         public Admin()
         {
             InitializeComponent();
@@ -22,6 +24,7 @@ namespace Pharmacy
         {
             InitializeComponent();
             label2.Text = s;
+            this.s = s;
             ButtonDashBoard.PerformClick();
             
         }
@@ -41,6 +44,7 @@ namespace Pharmacy
 
         private void ButtonProfile_Click(object sender, EventArgs e)
         {
+            
             editProfilecs1.BringToFront();
         }
 

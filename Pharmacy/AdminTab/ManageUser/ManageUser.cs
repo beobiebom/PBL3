@@ -28,13 +28,16 @@ namespace Pharmacy.AdminTab
 
         private void buttonAdd_Click_1(object sender, EventArgs e)
         {
+            
             AddUser f = new AddUser();
+            
             f.Show();
         }
 
         private void buttonUpdate_Click_1(object sender, EventArgs e)
         {
             UpdateUser f = new UpdateUser();
+            
             f.Show();
         }
     }

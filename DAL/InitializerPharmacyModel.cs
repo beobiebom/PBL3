@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Data.Entity;
 namespace DAL
 {
-    class InitializerPharmacyModel:DropCreateDatabaseAlways<PharmacyModel>
+    class InitializerPharmacyModel: CreateDatabaseIfNotExists<PharmacyModel>
     {
         protected override void Seed(PharmacyModel context)
         {

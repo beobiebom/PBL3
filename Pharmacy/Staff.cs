@@ -1,4 +1,5 @@
-﻿using Pharmacy.StaffSubtab;
+﻿using DAL;
+using Pharmacy.StaffSubtab;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,9 +14,11 @@ namespace Pharmacy
 {
     public partial class Staff : Form
     {
+        string s = "";
         public Staff(string s)
         {
             InitializeComponent();
+            this.s = s;
             NameStaffLabel.Text=s;
             ButtonDashBoard.PerformClick();
         }
@@ -43,6 +46,14 @@ namespace Pharmacy
         private void ButtonProfile_Click(object sender, EventArgs e)
         {
             titleLabel.Text = "Profile";
+            using(PharmacyModel phar = new PharmacyModel())
+            {
+                USER user = phar.USERs.FirstOrDefault(u => u.USER_NAME == s);
+                int id = user.ID;
+                staffProfile1.userId = id;
+                staffProfile1.refresh();
+            }
+            
             staffProfile1.BringToFront();
         }
 
